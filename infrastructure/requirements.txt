@@ -1,0 +1,4 @@
+aws-cdk-lib==2.131.0
+constructs==10.3.0
+boto3==1.34.0
+aws-cdk.aws-lambda-python-alpha==2.131.0a0

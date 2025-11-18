@@ -1,0 +1,1 @@
+{"statusCode": 200, "headers": {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"}, "body": "{\"message\": \"SpaceX data processed successfully\", \"result\": {\"total_processed\": 205, \"successful_upserts\": 205, \"failed_upserts\": 0}, \"timestamp\": \"2025-11-18T00:06:57.467933+00:00\"}"}

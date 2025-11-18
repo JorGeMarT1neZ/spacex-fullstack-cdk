@@ -1,0 +1,379 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "SpaceXFullStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "SpaceXFullStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "SpaceXFullStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/us-east-1",
+      "properties": {
+        "templateFile": "SpaceXFullStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1/d7ebe8d5e9bc8c243c1ecdddd6ab29fa8dc356e32e255e89993a6212a693c076.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "SpaceXFullStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "SpaceXFullStack.assets"
+      ],
+      "metadata": {
+        "/SpaceXFullStack/SpaceXLaunchesTable": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "SpaceXLaunchesTableA86A4AE4"
+            }
+          }
+        ],
+        "/SpaceXFullStack/SpaceXLaunchesTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceXLaunchesTableA86A4AE4"
+          }
+        ],
+        "/SpaceXFullStack/SpaceXDataProcessor/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceXDataProcessorServiceRole5F5233D9"
+          }
+        ],
+        "/SpaceXFullStack/SpaceXDataProcessor/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceXDataProcessorServiceRoleDefaultPolicy1CF4FE33"
+          }
+        ],
+        "/SpaceXFullStack/SpaceXDataProcessor/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceXDataProcessor565DFC9E"
+          }
+        ],
+        "/SpaceXFullStack/ScheduledRule/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ScheduledRuleAC380132"
+          }
+        ],
+        "/SpaceXFullStack/ScheduledRule/AllowEventRuleSpaceXFullStackSpaceXDataProcessor8998D8DE": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ScheduledRuleAllowEventRuleSpaceXFullStackSpaceXDataProcessor8998D8DECF548D57"
+          }
+        ],
+        "/SpaceXFullStack/AppVPC/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVPCB7733741"
+          }
+        ],
+        "/SpaceXFullStack/AppVPC/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVPCPublicSubnet1Subnet5EAE38B2"
+          }
+        ],
+        "/SpaceXFullStack/AppVPC/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVPCPublicSubnet1RouteTable63382DC5"
+          }
+        ],
+        "/SpaceXFullStack/AppVPC/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVPCPublicSubnet1RouteTableAssociation10038102"
+          }
+        ],
+        "/SpaceXFullStack/AppVPC/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVPCPublicSubnet1DefaultRoute51A04DF7"
+          }
+        ],
+        "/SpaceXFullStack/AppVPC/PublicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVPCPublicSubnet2Subnet19F05CAF"
+          }
+        ],
+        "/SpaceXFullStack/AppVPC/PublicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVPCPublicSubnet2RouteTable3C9BB83A"
+          }
+        ],
+        "/SpaceXFullStack/AppVPC/PublicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVPCPublicSubnet2RouteTableAssociationDB170019"
+          }
+        ],
+        "/SpaceXFullStack/AppVPC/PublicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVPCPublicSubnet2DefaultRouteC200D8E4"
+          }
+        ],
+        "/SpaceXFullStack/AppVPC/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVPCIGW7D765419"
+          }
+        ],
+        "/SpaceXFullStack/AppVPC/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppVPCVPCGW31CBD692"
+          }
+        ],
+        "/SpaceXFullStack/BackendRepository/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BackendRepository9B711290"
+          }
+        ],
+        "/SpaceXFullStack/FrontendRepository/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontendRepository7D714FA2"
+          }
+        ],
+        "/SpaceXFullStack/AppCluster/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppCluster99B78AC1"
+          }
+        ],
+        "/SpaceXFullStack/TaskExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskExecutionRole250D2532"
+          }
+        ],
+        "/SpaceXFullStack/TaskExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskExecutionRoleDefaultPolicyA84DD1B0"
+          }
+        ],
+        "/SpaceXFullStack/BackendTaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BackendTaskRole65DD5890"
+          }
+        ],
+        "/SpaceXFullStack/BackendTaskRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BackendTaskRoleDefaultPolicyD82ED08E"
+          }
+        ],
+        "/SpaceXFullStack/BackendTaskDefinition/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BackendTaskDefinitionEC224DE6"
+          }
+        ],
+        "/SpaceXFullStack/BackendTaskDefinition/BackendContainer/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BackendTaskDefinitionBackendContainerLogGroup5E30F6E8"
+          }
+        ],
+        "/SpaceXFullStack/FrontendTaskDefinition/TaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontendTaskDefinitionTaskRole0DD17CB3"
+          }
+        ],
+        "/SpaceXFullStack/FrontendTaskDefinition/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontendTaskDefinition6CBC2B00"
+          }
+        ],
+        "/SpaceXFullStack/FrontendTaskDefinition/FrontendContainer/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontendTaskDefinitionFrontendContainerLogGroup994ED50C"
+          }
+        ],
+        "/SpaceXFullStack/LoadBalancer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LoadBalancerBE9EEC3A"
+          }
+        ],
+        "/SpaceXFullStack/LoadBalancer/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LoadBalancerSecurityGroupA28D6DD7"
+          }
+        ],
+        "/SpaceXFullStack/LoadBalancer/SecurityGroup/to SpaceXFullStackBackendServiceSecurityGroup23D94AA2:8000": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LoadBalancerSecurityGrouptoSpaceXFullStackBackendServiceSecurityGroup23D94AA2800008883BB5"
+          }
+        ],
+        "/SpaceXFullStack/LoadBalancer/SecurityGroup/to SpaceXFullStackFrontendServiceSecurityGroup355C1B22:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LoadBalancerSecurityGrouptoSpaceXFullStackFrontendServiceSecurityGroup355C1B228009311808"
+          }
+        ],
+        "/SpaceXFullStack/LoadBalancer/BackendListener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LoadBalancerBackendListenerFBC01A08"
+          }
+        ],
+        "/SpaceXFullStack/LoadBalancer/FrontendListener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LoadBalancerFrontendListener5DEC725D"
+          }
+        ],
+        "/SpaceXFullStack/BackendService/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BackendService7A4224EE"
+          }
+        ],
+        "/SpaceXFullStack/BackendService/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BackendServiceSecurityGroup0865F57D"
+          }
+        ],
+        "/SpaceXFullStack/BackendService/SecurityGroup/from SpaceXFullStackLoadBalancerSecurityGroup2B9DBB5D:8000": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BackendServiceSecurityGroupfromSpaceXFullStackLoadBalancerSecurityGroup2B9DBB5D800065F20149"
+          }
+        ],
+        "/SpaceXFullStack/FrontendService/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontendServiceBC94BA93"
+          }
+        ],
+        "/SpaceXFullStack/FrontendService/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontendServiceSecurityGroup85470DEC"
+          }
+        ],
+        "/SpaceXFullStack/FrontendService/SecurityGroup/from SpaceXFullStackLoadBalancerSecurityGroup2B9DBB5D:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontendServiceSecurityGroupfromSpaceXFullStackLoadBalancerSecurityGroup2B9DBB5D80E6B4B063"
+          }
+        ],
+        "/SpaceXFullStack/BackendTargetGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BackendTargetGroupECF98930"
+          }
+        ],
+        "/SpaceXFullStack/FrontendTargetGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontendTargetGroupED7B3E5D"
+          }
+        ],
+        "/SpaceXFullStack/BackendRepositoryUri": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BackendRepositoryUri"
+          }
+        ],
+        "/SpaceXFullStack/FrontendRepositoryUri": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontendRepositoryUri"
+          }
+        ],
+        "/SpaceXFullStack/LoadBalancerDNS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LoadBalancerDNS"
+          }
+        ],
+        "/SpaceXFullStack/FrontendURL": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontendURL"
+          }
+        ],
+        "/SpaceXFullStack/BackendURL": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BackendURL"
+          }
+        ],
+        "/SpaceXFullStack/SwaggerURL": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SwaggerURL"
+          }
+        ],
+        "/SpaceXFullStack/TableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TableName"
+          }
+        ],
+        "/SpaceXFullStack/LambdaFunctionName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionName"
+          }
+        ],
+        "/SpaceXFullStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/SpaceXFullStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/SpaceXFullStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "SpaceXFullStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
