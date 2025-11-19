@@ -6,6 +6,27 @@ __pycache__
 db.sqlite3
 media
 
+# Archivos específicos de Python
+venv/
+__pycache__/
+*.pyc
+*.log
+db.sqlite3
+
+# Archivos específicos de Node.js (Frontend)
+frontend/node_modules
+frontend/build
+frontend/dist
+
+# Archivos de CDK
+infrastructure/cdk.out/
+infrastructure/.cdk.staging/
+infrastructure/venv/
+
+# Credenciales y archivos temporales
+.env
+.DS_Store
+
 # Backup files # 
 *.bak 
 
